@@ -1,0 +1,351 @@
+/* Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+/* Css Reset */
+/* HTML de bulunan her elemanın default olarak sahip olduğu margin ve padding değerleri vardır.
+Bu değerler bizim istediğimiz stillendirmeleri yapmamızı engeller. 
+Bu sebepten gelip gelip bunları sıfırlamamız gerekir.
+Bunu HTML deki tüm elemanlar için teker teker yapmak yerine 
+*{} içerisinde yaparız.
+* yazılımda "her" demektir.
+Bu sayede tüm elemanların default değerleri sıfırlanır. */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* HTML kısmında en kapsayıcı etiket "body" dir. 
+Bundan dolayı tüm elemanların sahip olması istenen
+ css özellikleri "body" e verilir.*/
+body {
+    font-family: 'Poppins'sans-serif;
+}
+/*! Header and Banner Area */
+.banner {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), 
+    url("./banner.png");
+    /* linear-gradient==> Kapsayıcının arka planında renk geçişi 
+    elde etmek için kullanılır. Bu özellik sayesinde buradaki 
+    banner kapsayıcısının arka planına renk geçişi verdik.
+      */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 2% 6%;
+}
+.header img {
+    width: 50px;
+    border-radius: 50%;
+}
+.nav-links {
+    /* flex1 i header içerisindeki resim haricinde kalan
+    tüm alanı nav-links class ına vermek için kullandık.*/
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    
+}
+.nav-links ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: #f44336;
+    display: block;
+    margin: auto;
+    transition: all 0.4s;
+
+    /* Bu özellik hover olma durumunda değişen css özelliklerini yavaşlatarak 
+    daha güzel bir görünüm elde etmek için kullanılır.*/
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+
+}
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+
+}
+/*! Text Box */
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    color: #fff;
+}
+.text-box h1 {
+    font-size: 62px;
+}
+.text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+}
+.hero-button {
+    display: inline-block;
+    padding: 12px 34px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.hero-button:hover {
+    background-color: #f44336;
+    border: 1px solid #f44336;
+}
+#menu-icon {
+    color: #fff;
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+}
+#close-icon,
+#menu-icon {
+    display: none;
+}
+
+
+
+/*! Course */
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.course h1 {
+    font-size: 36px;
+    font-weight: 600;
+}
+.course p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row {
+    display: flex;
+   margin-top: 5%;
+   justify-content: space-between;
+}
+.course-col {
+    background-color: #fff3f3;
+    margin: 5%;
+    flex-basis: 31%;
+    padding: 20px 12px;
+    transition: all 0.4s;
+    border-radius: 10px;
+}
+.course-col h3 {
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    /*? box shadow elemanların arkasında gölge efekti vermek için kullanılır.
+    * Bu özellik dört değer alır. 
+    * Birinci değer X ekseninde
+    ikinci değer Y ekseninde oluşturulan gölgenin ne kadar öteleneceği.
+    Üçüncü değer bu gölgenin ne kadar dağıtılacağı.
+    Dördüncü değer bu gölgenin hangi renkte olacağı.
+    */
+}
+/*! Campus  */
+.campus {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col {
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    /* overflow kapsayıcının içerisindeki elemanda bir taşma olursa
+    bunu yönetmek için kullanılır. */
+    position: relative;
+}
+.campus-col img {
+    width: 100%;
+    display: block;
+
+}
+.layer {
+    position: absolute;
+    background: transparent;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.layer:hover {
+    background-color: rgb(226, 0, 0, 0.7);
+}
+.layer h3 {
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    transition: 1s;
+}
+.layer:hover h3 {
+    bottom: 49%;
+    opacity: 1;
+}
+
+/*! Educations */
+.educations {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    margin-top: 100px;
+}
+.education-col {
+    flex-basis: 31%;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.education-col img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.education-col h3 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+}
+.education-col p {
+    padding: 0;
+}
+/* Testimonials */
+.testimonials {
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+.testimonials-col {
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background-color: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonials-col img {
+    height: 40px;
+    width: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonials-col h3 {
+    margin-top: 15px;
+}
+.testimonials-col i {
+    color: #f44336;
+}
+/* * Call to action */
+.call-to-action {
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url(./banner2.jpg);
+    padding: 100px 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    text-align: center;
+}
+.call-to-action h1 {
+    color: #fff;
+    margin-bottom: 40px;
+}
+/* * Footer */
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4 {
+    margin: 20px 0 25px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+.footer .footer-description {
+    width: 80%;
+    margin: auto;
+}
+.icons i {
+    color: #f44336;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+.copyright span {
+    margin: 0 20 px;
+}
+   /* * ......RESPONSİVE TASARIM.....
+   * oluşturulan web siteleri tüm cihazlarda güzel gözükmelidir.
+   Tüm cihazlardaki tüm site görünüm düzenlemelerine 
+   * "responsive tasarım" denir.
+   * RESPONSİVE TASARIM NASIL YAPILIR? 
+   * "media" etiketleri ile yapılır. 
+   Bu yapı ekran boyutunu ve bu ekran boyutunda 
+   olması istenen düzenlemeleri belirtmemizi ister.*/
+
+   @media (max-width: 700px) {
+    .nav-links {
+        display: none;
+    }
+   #menu-icon {
+    display: block;
+   }
+   .row {
+    flex-direction: column;
+   }
+   .text-box h1 {
+    font-size: 30px;
+   }
+   .text-box p {
+    font-size: 10px;
+   }
+   .education-col img {
+    height: 200px;
+   }
+   .call-to-action H1 {
+    font-size: 20PX;
+   }
+}
+
+
+
+
+
