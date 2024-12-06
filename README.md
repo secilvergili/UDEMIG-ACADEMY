@@ -12,7 +12,7 @@ Technologies used,
 HTML5 
 CSS3 (Responsive Design)
 
-https://github.com/user-attachments/assets/ddbcb879-d65d-44ba-8586-ab21fd95a747
+
 
 
 
